@@ -10,12 +10,12 @@ The following scenarios are supported:
     - [Getting started with DuckDB](#getting-started-with-duckdb)
     - [Creating the Foreign Server](#creating-the-foreign-server)
     - [Full connectivity with Foreign Tables](#full-connectivity-with-foreign-tables)
+  - [Other Integrations](#other-integrations)
 
 
 ## Replicating data from IRIS to Iceberg
 
-:information_source: See [this repository](https://github.com/isc-patrick/iris-iceberg) for an integration based on PyIceberg
-
+:information_source: See [this repository](https://github.com/isc-patrick/iris-iceberg) for an integration based on PyIceberg, enabling you to conveniently and repetitively push data from IRIS tables to Iceberg format using a simple CLI or API. Please follow the instructions described in the repository, or import the package from [InterSystems OpenExchange](https://openexchange.intersystems.com/package/pyiris-iceberg).
 
 
 ## Accessing Iceberg tables using Foreign Tables
@@ -94,3 +94,8 @@ As a workaround, we'll sneak in a small class overriding the built-in JDBC FDW a
 2. Look for your Foreign Server's class definition. It should be called `User.duckdb` if you used the above commands, but you may need to toggle "show generated items" to find it in VS Code.
 3. In the class definition, update the `FDWNAME` class parameter to point to the `bdb.sql.fdw.DuckDB` class you just imported. Save and compile
 4. All set! You should be able to SELECT from Iceberg-based Foreign Tables now.
+
+
+## Other Integrations
+
+If you have ideas or, better yet, implementations for other types of integrations between InterSystems IRIS and Open Table Formats, please let us know such that we can advertise them here, or include them directly in this repo.
